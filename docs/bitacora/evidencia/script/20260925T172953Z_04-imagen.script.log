@@ -1,0 +1,145 @@
+== Descarga o confirmacion de la imagen ==
+latest: Pulling from database/free
+8657f716b28d: Pulling fs layer
+c65d1110b553: Pulling fs layer
+140b206b4952: Pulling fs layer
+38ff4f672f92: Pulling fs layer
+a023c21abec0: Pulling fs layer
+0f1af34412e1: Pulling fs layer
+9fef2a2d2c96: Pulling fs layer
+2178f8f12451: Pulling fs layer
+a5c94e08b7ab: Pulling fs layer
+691071c7469e: Pulling fs layer
+5be1ae438566: Pulling fs layer
+41f596ae1fe2: Pulling fs layer
+69ff2012c9f9: Pulling fs layer
+35aa1ffc9a65: Pulling fs layer
+53aaafd0cc95: Pulling fs layer
+005b70b01f9e: Pulling fs layer
+bd9ddc54bea9: Pulling fs layer
+74e9a56cd377: Pulling fs layer
+21fad129fe0c: Pulling fs layer
+e5b6211941bd: Pulling fs layer
+21ac2e88c1f6: Pulling fs layer
+eb1edc5e12bf: Pulling fs layer
+4a0fd8694f65: Pulling fs layer
+72fb70ef02c0: Pulling fs layer
+cd7d58d9ce60: Pulling fs layer
+d027137945d8: Pulling fs layer
+8bcb2ee0e6c2: Pulling fs layer
+cf3734d851b2: Pulling fs layer
+fe454f8d9df5: Pulling fs layer
+35aa1ffc9a65: Waiting
+53aaafd0cc95: Waiting
+005b70b01f9e: Waiting
+bd9ddc54bea9: Waiting
+74e9a56cd377: Waiting
+21fad129fe0c: Waiting
+e5b6211941bd: Waiting
+21ac2e88c1f6: Waiting
+eb1edc5e12bf: Waiting
+4a0fd8694f65: Waiting
+72fb70ef02c0: Waiting
+cd7d58d9ce60: Waiting
+d027137945d8: Waiting
+8bcb2ee0e6c2: Waiting
+cf3734d851b2: Waiting
+fe454f8d9df5: Waiting
+38ff4f672f92: Waiting
+a023c21abec0: Waiting
+0f1af34412e1: Waiting
+9fef2a2d2c96: Waiting
+2178f8f12451: Waiting
+a5c94e08b7ab: Waiting
+691071c7469e: Waiting
+5be1ae438566: Waiting
+69ff2012c9f9: Waiting
+41f596ae1fe2: Waiting
+c65d1110b553: Download complete
+38ff4f672f92: Verifying Checksum
+38ff4f672f92: Download complete
+8657f716b28d: Download complete
+0f1af34412e1: Verifying Checksum
+0f1af34412e1: Download complete
+9fef2a2d2c96: Verifying Checksum
+9fef2a2d2c96: Download complete
+8657f716b28d: Pull complete
+c65d1110b553: Pull complete
+2178f8f12451: Verifying Checksum
+2178f8f12451: Download complete
+a5c94e08b7ab: Verifying Checksum
+a5c94e08b7ab: Download complete
+691071c7469e: Verifying Checksum
+691071c7469e: Download complete
+5be1ae438566: Verifying Checksum
+5be1ae438566: Download complete
+41f596ae1fe2: Verifying Checksum
+41f596ae1fe2: Download complete
+69ff2012c9f9: Verifying Checksum
+69ff2012c9f9: Download complete
+35aa1ffc9a65: Verifying Checksum
+35aa1ffc9a65: Download complete
+53aaafd0cc95: Verifying Checksum
+53aaafd0cc95: Download complete
+005b70b01f9e: Verifying Checksum
+005b70b01f9e: Download complete
+bd9ddc54bea9: Verifying Checksum
+bd9ddc54bea9: Download complete
+74e9a56cd377: Verifying Checksum
+74e9a56cd377: Download complete
+21fad129fe0c: Download complete
+e5b6211941bd: Verifying Checksum
+e5b6211941bd: Download complete
+21ac2e88c1f6: Verifying Checksum
+21ac2e88c1f6: Download complete
+eb1edc5e12bf: Download complete
+140b206b4952: Download complete
+72fb70ef02c0: Verifying Checksum
+72fb70ef02c0: Download complete
+cd7d58d9ce60: Download complete
+d027137945d8: Verifying Checksum
+d027137945d8: Download complete
+8bcb2ee0e6c2: Verifying Checksum
+8bcb2ee0e6c2: Download complete
+140b206b4952: Pull complete
+cf3734d851b2: Verifying Checksum
+cf3734d851b2: Download complete
+38ff4f672f92: Pull complete
+fe454f8d9df5: Verifying Checksum
+fe454f8d9df5: Download complete
+4a0fd8694f65: Verifying Checksum
+4a0fd8694f65: Download complete
+a023c21abec0: Verifying Checksum
+a023c21abec0: Download complete
+a023c21abec0: Pull complete
+0f1af34412e1: Pull complete
+9fef2a2d2c96: Pull complete
+2178f8f12451: Pull complete
+a5c94e08b7ab: Pull complete
+691071c7469e: Pull complete
+5be1ae438566: Pull complete
+41f596ae1fe2: Pull complete
+69ff2012c9f9: Pull complete
+35aa1ffc9a65: Pull complete
+53aaafd0cc95: Pull complete
+005b70b01f9e: Pull complete
+bd9ddc54bea9: Pull complete
+74e9a56cd377: Pull complete
+21fad129fe0c: Pull complete
+e5b6211941bd: Pull complete
+21ac2e88c1f6: Pull complete
+eb1edc5e12bf: Pull complete
+4a0fd8694f65: Pull complete
+72fb70ef02c0: Pull complete
+cd7d58d9ce60: Pull complete
+d027137945d8: Pull complete
+8bcb2ee0e6c2: Pull complete
+cf3734d851b2: Pull complete
+fe454f8d9df5: Pull complete
+Digest: sha256:f988b0c04c4c386cd306a2a914c0d7a9702d83acc31b064a28ad8eb6278a8fba
+Status: Downloaded newer image for container-registry.oracle.com/database/free:latest
+container-registry.oracle.com/database/free:latest
+
+== Imagen local y su digest (version exacta instalada) ==
+REPOSITORY                                    TAG       DIGEST                                                                    IMAGE ID       CREATED        SIZE
+container-registry.oracle.com/database/free   latest    sha256:f988b0c04c4c386cd306a2a914c0d7a9702d83acc31b064a28ad8eb6278a8fba   dbd385a383e2   2 months ago   9.46GB
