@@ -1,0 +1,52 @@
+== Cliente y servidor de Docker ==
+Client:
+ Version:           29.4.0
+ API version:       1.54
+ Go version:        go1.26.4
+ Git commit:        9d7ad9f
+ Built:             Fri Aug  7 04:38:56 2026
+ OS/Arch:           darwin/arm64
+ Context:           orbstack
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          29.4.0
+  API version:      1.54 (minimum version 1.40)
+  Go version:       go1.26.1
+  Git commit:       daa0cb7f
+  Built:            Tue Apr  7 08:35:43 2026
+  OS/Arch:          linux/arm64
+  Experimental:     true
+ containerd:
+  Version:          v2.2.2
+  GitCommit:        301b2dac98f15c27117da5c8af12118a041a31d9
+ runc:
+  Version:          1.5.1
+  GitCommit:        bb14dabeb7185bb72c8c86735d090dcb20f36587
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+== Prueba real: crear, ejecutar y eliminar un contenedor ==
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
