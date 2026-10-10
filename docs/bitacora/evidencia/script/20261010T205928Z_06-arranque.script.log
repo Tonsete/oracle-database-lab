@@ -1,0 +1,392 @@
+== Esperando a que oralab-26ai este healthy (max. 5 min) ==
+ intento 1: healthy
+== Estado final ==
+oralab-26ai Up 20 seconds (healthy)
+== Registro de arranque (docker logs) ==
+Starting Oracle Net Listener.
+Oracle Net Listener started.
+Starting Oracle AI Database instance FREE.
+Oracle AI Database instance FREE started.
+
+The Oracle base remains unchanged with value /opt/oracle
+
+SQL*Plus: Release 23.26.3.0.0 - Production on Fri Sep 25 17:36:36 2026
+Version 23.26.3.0.0
+
+Copyright (c) 1982, 2026, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle AI Database 26ai Free Release 23.26.3.0.0 - Develop, Learn, and Run for Free
+Version 23.26.3.0.0
+
+SQL> 
+User altered.
+
+SQL> 
+User altered.
+
+SQL> 
+Session altered.
+
+SQL> 
+User altered.
+
+SQL> Disconnected from Oracle AI Database 26ai Free Release 23.26.3.0.0 - Develop, Learn, and Run for Free
+Version 23.26.3.0.0
+#########################
+DATABASE IS READY TO USE!
+#########################
+The following output is now a tail of the alert.log:
+TABLE AUDSYS.AUD$UNIFIED: ADDED INTERVAL PARTITION SYS_P533 (4470) VALUES LESS THAN (TIMESTAMP' 2026-09-26 00:00:00')
+CLID: P
+PDB$SEED(2):Autotune of undo retention is turned on. 
+PDB$SEED(2):Opening pdb with Resource Manager plan: DEFAULT_PLAN
+FREEPDB1(3):Autotune of undo retention is turned on. 
+FREEPDB1(3):Opening pdb with Resource Manager plan: DEFAULT_PLAN
+Completed: Pluggable database FREEPDB1 opened read write 
+Completed: ALTER DATABASE OPEN
+2026-09-25T17:36:37.212874+00:00
+FREEPDB1(3):TABLE AUDSYS.AUD$UNIFIED: ADDED INTERVAL PARTITION SYS_P544 (4470) VALUES LESS THAN (TIMESTAMP' 2026-09-26 00:00:00')
+2026-09-25T17:36:37.668983+00:00
+===========================================================
+Dumping current patch information
+===========================================================
+No patches have been applied
+===========================================================
+2026-09-25T17:36:37.755310+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 409600K, new size 419840K
+2026-09-25T17:36:38.407453+00:00
+TABLE SYS.WRP$_REPORTS: ADDED AUTOLIST FRAGMENT SYS_P553 (2) VALUES (( 1510161217, TO_DATE(' 2026-09-21 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
+TABLE SYS.WRP$_REPORTS_DETAILS: ADDED AUTOLIST FRAGMENT SYS_P554 (2) VALUES (( 1510161217, TO_DATE(' 2026-09-21 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
+TABLE SYS.WRP$_REPORTS_TIME_BANDS: ADDED AUTOLIST FRAGMENT SYS_P557 (2) VALUES (( 1510161217, TO_DATE(' 2026-09-21 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
+2026-09-25T17:46:36.182461+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 624640K, new size 655360K
+2026-09-25T17:56:37.176852+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 419840K, new size 430080K
+2026-09-25T18:34:03.805197+00:00
+--ATTENTION--
+Time drifted forward by (2227140840) micro seconds at 1790361243598919 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (2229000000) micro seconds at 1790361244 whereas allowed drift is 5000000
+2026-09-25T18:38:23.159354+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 430080K, new size 440320K
+2026-09-25T21:39:21.720848+00:00
+--ATTENTION--
+Time drifted forward by (7386262141) micro seconds at 1790372361527585 whereas allowed drift is 1000000
+--ATTENTION--
+2026-09-25T21:39:22.725824+00:00
+Time drifted forward by (3092032704) micro seconds at 1790372362 whereas allowed drift is 5000000
+2026-09-25T21:49:23.642730+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 655360K, new size 665600K
+2026-09-25T22:00:04.293685+00:00
+Begin automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+End automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+2026-09-25T22:00:06.211196+00:00
+TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P573 (46289) VALUES LESS THAN (TO_DATE(' 2026-09-26 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P576 (46289) VALUES LESS THAN (TO_DATE(' 2026-09-26 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-25T22:00:50.382409+00:00
+Resize operation completed for file# 11, fname /opt/oracle/oradata/FREE/undotbs01.dbf, old size 25600K, new size 30720K
+2026-09-25T22:00:51.918114+00:00
+Resize operation completed for file# 11, fname /opt/oracle/oradata/FREE/undotbs01.dbf, old size 30720K, new size 35840K
+2026-09-25T22:01:09.534367+00:00
+Resize operation completed for file# 11, fname /opt/oracle/oradata/FREE/undotbs01.dbf, old size 35840K, new size 40960K
+Resize operation completed for file# 11, fname /opt/oracle/oradata/FREE/undotbs01.dbf, old size 40960K, new size 46080K
+2026-09-25T22:09:25.732611+00:00
+TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P593 (2) VALUES LESS THAN (202)
+FREEPDB1(3):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P564 (2) VALUES LESS THAN (202)
+2026-09-26T11:35:32.585941+00:00
+--ATTENTION--
+Time drifted forward by (46337060994) micro seconds at 1790422532210055 whereas allowed drift is 1000000
+2026-09-26T11:35:33.975366+00:00
+--ATTENTION--
+Time drifted forward by (3388327040) micro seconds at 1790422533 whereas allowed drift is 5000000
+2026-09-26T11:35:41.418002+00:00
+Begin automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+End automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+2026-09-26T11:35:42.534361+00:00
+TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P613 (46290) VALUES LESS THAN (TO_DATE(' 2026-09-27 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P616 (46290) VALUES LESS THAN (TO_DATE(' 2026-09-27 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-26T11:36:21.364992+00:00
+--ATTENTION--
+Time drifted forward by (30594596) micro seconds at 1790422581364211 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (32000000) micro seconds at 1790422581 whereas allowed drift is 5000000
+2026-09-26T11:36:24.268300+00:00
+Thread 1 cannot allocate new log, sequence 3
+Private strand flush not complete
+  Current log# 2 seq# 2 mem# 0: /opt/oracle/oradata/FREE/redo02.log
+2026-09-26T11:36:27.297951+00:00
+Thread 1 advanced to log sequence 3 (LGWR switch),  current SCN: 3029063
+  Current log# 3 seq# 3 mem# 0: /opt/oracle/oradata/FREE/redo03.log
+2026-09-26T11:36:27.880482+00:00
+ARC2 (PID:189): Archived Log entry 2 added for B-1238104578.T-1.S-2 LOS:0x00000000002d15a2 NXS:0x00000000002e3847 NAB:357290 ID 0xffff5a025f41 LAD:1 [krse.c:4889]
+2026-09-26T11:38:10.021407+00:00
+--ATTENTION--
+Time drifted forward by (53733505) micro seconds at 1790422690020733 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (55000000) micro seconds at 1790422690 whereas allowed drift is 5000000
+2026-09-26T11:41:42.332334+00:00
+--ATTENTION--
+Time drifted forward by (187905701) micro seconds at 1790422902331538 whereas allowed drift is 1000000
+--ATTENTION--
+2026-09-26T11:41:43.362146+00:00
+Time drifted forward by (189000000) micro seconds at 1790422903 whereas allowed drift is 5000000
+2026-09-26T17:02:52.803929+00:00
+--ATTENTION--
+Time drifted forward by (19204136066) micro seconds at 1790442172569337 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (2026130816) micro seconds at 1790442173 whereas allowed drift is 5000000
+2026-09-26T17:03:05.394709+00:00
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P584 (46290) VALUES LESS THAN (TO_DATE(' 2026-09-27 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P587 (46290) VALUES LESS THAN (TO_DATE(' 2026-09-27 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-26T17:03:15.990897+00:00
+FREEPDB1(3):Resize operation completed for file# 12, fname /opt/oracle/oradata/FREE/FREEPDB1/system01.dbf, old size 296960K, new size 307200K
+2026-09-26T17:12:55.308781+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 440320K, new size 450560K
+2026-09-27T05:18:23.371326+00:00
+--ATTENTION--
+Time drifted forward by (42563974627) micro seconds at 1790486303083026 whereas allowed drift is 1000000
+--ATTENTION--
+2026-09-27T05:18:24.489186+00:00
+Time drifted forward by (1132368) micro seconds at 1790486304215394 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (3911294336) micro seconds at 1790486304 whereas allowed drift is 5000000
+2026-09-27T05:18:35.334219+00:00
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P604 (46291) VALUES LESS THAN (TO_DATE(' 2026-09-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P607 (46291) VALUES LESS THAN (TO_DATE(' 2026-09-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-27T05:18:50.235560+00:00
+Thread 1 cannot allocate new log, sequence 4
+Private strand flush not complete
+  Current log# 3 seq# 3 mem# 0: /opt/oracle/oradata/FREE/redo03.log
+2026-09-27T05:18:53.271982+00:00
+Thread 1 advanced to log sequence 4 (LGWR switch),  current SCN: 3103469
+  Current log# 1 seq# 4 mem# 0: /opt/oracle/oradata/FREE/redo01.log
+2026-09-27T05:18:53.657507+00:00
+ARC3 (PID:191): Archived Log entry 3 added for B-1238104578.T-1.S-3 LOS:0x00000000002e3847 NXS:0x00000000002f5aed NAB:365436 ID 0xffff5a025f41 LAD:1 [krse.c:4889]
+2026-09-27T05:28:23.900304+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 665600K, new size 675840K
+2026-09-27T07:24:31.490421+00:00
+--ATTENTION--
+Time drifted forward by (5636903234) micro seconds at 1790493871168897 whereas allowed drift is 1000000
+2026-09-27T07:24:32.711794+00:00
+--ATTENTION--
+Time drifted forward by (1343032704) micro seconds at 1790493872 whereas allowed drift is 5000000
+2026-09-27T07:24:37.484961+00:00
+Begin automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+End automatic SQL Tuning Advisor run for special tuning task "SYS_AUTO_SQL_TUNING_TASK".
+2026-09-27T07:24:38.971945+00:00
+TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P633 (46291) VALUES LESS THAN (TO_DATE(' 2026-09-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P636 (46291) VALUES LESS THAN (TO_DATE(' 2026-09-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-27T07:38:46.273970+00:00
+TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P653 (3) VALUES LESS THAN (298)
+2026-09-27T08:08:34.615988+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 675840K, new size 686080K
+2026-09-27T09:03:40.916832+00:00
+FREEPDB1(3):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P624 (3) VALUES LESS THAN (298)
+2026-09-27T09:08:41.429698+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 450560K, new size 460800K
+2026-09-27T10:54:10.138864+00:00
+--ATTENTION--
+Time drifted forward by (443643012) micro seconds at 1790506450119278 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (445000000) micro seconds at 1790506450 whereas allowed drift is 5000000
+2026-09-27T11:06:17.339451+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 686080K, new size 696320K
+2026-09-27T12:00:30.778535+00:00
+Thread 1 advanced to log sequence 5 (LGWR switch),  current SCN: 3180996
+  Current log# 2 seq# 5 mem# 0: /opt/oracle/oradata/FREE/redo02.log
+2026-09-27T12:00:31.594703+00:00
+ARC0 (PID:185): Archived Log entry 4 added for B-1238104578.T-1.S-4 LOS:0x00000000002f5aed NXS:0x00000000003089c4 NAB:353278 ID 0xffff5a025f41 LAD:1 [krse.c:4889]
+2026-09-27T12:05:33.039787+00:00
+--ATTENTION--
+Time drifted forward by (105800848) micro seconds at 1790510732895742 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (107000000) micro seconds at 1790510733 whereas allowed drift is 5000000
+2026-09-27T14:48:34.177472+00:00
+--ATTENTION--
+Time drifted forward by (8793393813) micro seconds at 1790520513865195 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (204065408) micro seconds at 1790520514 whereas allowed drift is 5000000
+2026-09-27T14:58:36.199705+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 460800K, new size 471040K
+2026-09-27T15:30:18.621092+00:00
+--ATTENTION--
+Time drifted forward by (1128865970) micro seconds at 1790523018430007 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (1131000000) micro seconds at 1790523019 whereas allowed drift is 5000000
+2026-09-27T16:16:28.855158+00:00
+--ATTENTION--
+The system is observing online redo log writes that are taking longer than expected to complete. This can lead to system performance instability.
+2026-09-27T17:01:39.701765+00:00
+--ATTENTION--
+Time drifted forward by (3600782) micro seconds at 1790528499688666 whereas allowed drift is 1000000
+2026-09-27T17:14:18.795596+00:00
+--ATTENTION--
+Time drifted forward by (709381232) micro seconds at 1790529258696744 whereas allowed drift is 1000000
+2026-09-27T17:14:19.478194+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 696320K, new size 706560K
+--ATTENTION--
+Time drifted forward by (711000000) micro seconds at 1790529259 whereas allowed drift is 5000000
+2026-09-27T18:27:54.691700+00:00
+--ATTENTION--
+2026-09-27T18:27:56.967418+00:00
+Time drifted forward by (1865081457) micro seconds at 1790533674480233 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (2605640) micro seconds at 1790533677085873 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (1869000000) micro seconds at 1790533677 whereas allowed drift is 5000000
+2026-09-27T18:32:08.204421+00:00
+--ATTENTION--
+Time drifted forward by (9417230) micro seconds at 1790533928188837 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (10000000) micro seconds at 1790533928 whereas allowed drift is 5000000
+2026-09-27T18:56:01.885304+00:00
+Thread 1 advanced to log sequence 6 (LGWR switch),  current SCN: 3251140
+  Current log# 3 seq# 6 mem# 0: /opt/oracle/oradata/FREE/redo03.log
+2026-09-27T18:56:02.637040+00:00
+ARC1 (PID:187): Archived Log entry 5 added for B-1238104578.T-1.S-5 LOS:0x00000000003089c4 NXS:0x0000000000319bc4 NAB:355152 ID 0xffff5a025f41 LAD:1 [krse.c:4889]
+2026-09-28T05:31:34.447740+00:00
+--ATTENTION--
+2026-09-28T05:31:36.404978+00:00
+Time drifted forward by (36343765426) micro seconds at 1790573493537528 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (2970232) micro seconds at 1790573496507760 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (1987261632) micro seconds at 1790573496 whereas allowed drift is 5000000
+2026-09-28T05:31:46.249153+00:00
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P644 (46292) VALUES LESS THAN (TO_DATE(' 2026-09-29 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P647 (46292) VALUES LESS THAN (TO_DATE(' 2026-09-29 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2026-09-28T05:41:35.052086+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 706560K, new size 716800K
+2026-09-28T07:01:44.174764+00:00
+FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 471040K, new size 481280K
+2026-09-28T07:55:07.643491+00:00
+--ATTENTION--
+2026-09-28T07:55:09.057287+00:00
+Time drifted forward by (1735871926) micro seconds at 1790582100532998 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (8646299) micro seconds at 1790582109179297 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (1745000000) micro seconds at 1790582109 whereas allowed drift is 5000000
+2026-09-28T08:40:20.430423+00:00
+--ATTENTION--
+Time drifted forward by (1121076) micro seconds at 1790584820352479 whereas allowed drift is 1000000
+2026-09-28T10:51:14.625810+00:00
+--ATTENTION--
+Time drifted forward by (1083210) micro seconds at 1790592674447236 whereas allowed drift is 1000000
+2026-09-28T11:28:15.451832+00:00
+--ATTENTION--
+2026-09-28T11:28:15.493473+00:00
+--ATTENTION--
+2026-09-28T11:28:17.736050+00:00
+Time drifted forward by (481606278) micro seconds at 1790594894060448 whereas allowed drift is 1000000
+2026-09-28T11:28:17.736266+00:00
+The system is observing online redo log writes that are taking longer than expected to complete. This can lead to system performance instability.
+--ATTENTION--
+Time drifted forward by (3789663) micro seconds at 1790594897850111 whereas allowed drift is 1000000
+--ATTENTION--
+Time drifted forward by (486000000) micro seconds at 1790594898 whereas allowed drift is 5000000
+2026-09-28T11:29:17.863119+00:00
+Thread 1 advanced to log sequence 7 (LGWR switch),  current SCN: 3320219
+  Current log# 1 seq# 7 mem# 0: /opt/oracle/oradata/FREE/redo01.log
+2026-09-28T11:29:18.937658+00:00
+ARC2 (PID:189): Archived Log entry 6 added for B-1238104578.T-1.S-6 LOS:0x0000000000319bc4 NXS:0x000000000032a99b NAB:355287 ID 0xffff5a025f41 LAD:1 [krse.c:4889]
+2026-09-28T13:09:37.317291+00:00
+--ATTENTION--
+Time drifted forward by (3411759774) micro seconds at 1790600976849949 whereas allowed drift is 1000000
+--ATTENTION--
+2026-09-28T13:09:38.342771+00:00
+Time drifted forward by (3414000000) micro seconds at 1790600978 whereas allowed drift is 5000000
+Stopping container.
+SIGTERM received, shutting down database!
+
+SQL*Plus: Release 23.26.3.0.0 - Production on Mon Sep 28 13:10:16 2026
+Version 23.26.3.0.0
+
+Copyright (c) 1982, 2026, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle AI Database 26ai Free Release 23.26.3.0.0 - Develop, Learn, and Run for Free
+Version 23.26.3.0.0
+
+SQL> 2026-09-28T13:10:16.874868+00:00
+Shutting down ORACLE instance (immediate) (OS id: 66193)
+Shutdown is initiated by sqlplus@f563b6d819a7 (TNS V1-V3).
+Stopping background process SMCO.
+Shutting down instance: further logons disabled
+2026-09-28T13:10:17.089634+00:00
+Stopping background process CJQ0
+Stopping background process MMNL.
+2026-09-28T13:10:17.236783+00:00
+Process termination requested for pid 555 (db_q001_FREE) [source = rdbms], [info = 2] [request issued by pid: 553, uid: 54321]
+Stopping background process MMON.
+alter pluggable database all close immediate
+2026-09-28T13:10:17.436317+00:00
+FREEPDB1(3):JIT: pid 66193 requesting stop
+2026-09-28T13:10:17.458687+00:00
+FREEPDB1(3):Stopped service freepdb1
+Completed: Pluggable database FREEPDB1 closed services=None
+Completed: alter pluggable database all close immediate
+PDB$SEED(2):JIT: pid 66193 requesting stop
+License high water mark = 5
+
+Data Pump shutdown in progress
+ALTER DATABASE CLOSE NORMAL
+alter pluggable database all close immediate
+Completed: alter pluggable database all close immediate
+alter pluggable database all close immediate
+Completed: alter pluggable database all close immediate
+Stopping change tracking
+Database closed.
+Database dismounted.
+Starting Oracle Net Listener.
+Oracle Net Listener started.
+Starting Oracle AI Database instance FREE.
+Oracle AI Database instance FREE started.
+
+The Oracle base remains unchanged with value /opt/oracle
+
+SQL*Plus: Release 23.26.3.0.0 - Production on Sat Oct 10 20:59:15 2026
+Version 23.26.3.0.0
+
+Copyright (c) 1982, 2026, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle AI Database 26ai Free Release 23.26.3.0.0 - Develop, Learn, and Run for Free
+Version 23.26.3.0.0
+
+SQL> 
+User altered.
+
+SQL> 
+User altered.
+
+SQL> 
+Session altered.
+
+SQL> 
+User altered.
+
+SQL> Disconnected from Oracle AI Database 26ai Free Release 23.26.3.0.0 - Develop, Learn, and Run for Free
+Version 23.26.3.0.0
+#########################
+DATABASE IS READY TO USE!
+#########################
+The following output is now a tail of the alert.log:
+Completed: Pluggable database FREEPDB1 opened read write 
+Completed: ALTER DATABASE OPEN
+2026-10-10T20:59:15.948872+00:00
+===========================================================
+Dumping current patch information
+===========================================================
+No patches have been applied
+===========================================================
+2026-10-10T20:59:16.077311+00:00
+FREEPDB1(3):TABLE AUDSYS.AUD$UNIFIED: ADDED INTERVAL PARTITION SYS_P664 (4485) VALUES LESS THAN (TIMESTAMP' 2026-10-11 00:00:00')
+2026-10-10T20:59:17.212556+00:00
+TABLE SYS.WRP$_REPORTS: ADDED AUTOLIST FRAGMENT SYS_P682 (3) VALUES (( 1510161217, TO_DATE(' 2026-10-05 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
+TABLE SYS.WRP$_REPORTS_DETAILS: ADDED AUTOLIST FRAGMENT SYS_P683 (3) VALUES (( 1510161217, TO_DATE(' 2026-10-05 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
+TABLE SYS.WRP$_REPORTS_TIME_BANDS: ADDED AUTOLIST FRAGMENT SYS_P686 (3) VALUES (( 1510161217, TO_DATE(' 2026-10-05 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
