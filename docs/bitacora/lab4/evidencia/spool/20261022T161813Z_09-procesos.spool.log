@@ -1,0 +1,54 @@
+SQL Format Cleared
+
+== 1. Cuántos procesos tiene la instancia y de qué tipo ==
+
+TIPO        PROCESOS_ORACLE PROCESOS_LINUX
+----------- --------------- --------------
+background               85             52
+servidor                  5              5
+(si procesos_oracle > procesos_linux: algunos procesos Oracle son HILOS dentro de un mismo proceso Linux, p. ej. SCMN)
+
+== 2. Los procesos obligatorios y los que verás en el examen (v$bgprocess + v$process) ==
+
+PNAME  SPID     DESCRIPTION                                     
+------ -------- ------------------------------------------------
+PMON   643      process cleanup                                 
+LREG   709      Listener Registration                           
+SMON   699      System Monitor Process                          
+DBW0   693      db writer process 0                             
+LGWR   695      Redo etc.                                       
+CKPT   697      checkpoint                                      
+MMON   723      Manageability Monitor Process                   
+MMNL   725      Manageability Monitor Process 2                 
+RECO   707      distributed recovery                            
+ARC0   794      Archival Process 0                              
+CJQ0   991      Job Queue Coordinator                           
+CLMN   647      process cleanup                                 
+DIA0   688      diagnosibility process 0                        
+DIAG   673      diagnosibility process                          
+MMAN   665      Memory Manager                                  
+PMAN   685      process manager                                 
+PSP0   651      process spawner 0                               
+VKTM   655      Virtual Keeper of TiMe process                  
+
+== 3. ¿Hay archivador (ARCn)? En NOARCHIVELOG no debería aparecer ==
+
+PROCESOS_ARCN
+-------------
+            4
+
+== 4. Mi sesión y el proceso servidor que la atiende (arquitectura de servidor dedicado) ==
+
+       SID    SERIAL# USERNAME     MACHINE        PROGRAM                            SPID    
+---------- ---------- ------------ -------------- ---------------------------------- --------
+       213      21668 C##OPS_RO    MacBook-Air-de SQLcl                              1072    
+                                   -Antonio.local                                            
+
+
+== 5. Todas las sesiones de usuario ahora mismo ==
+
+       SID USERNAME     STATUS   MACHINE        PROGRAM                            SPID    
+---------- ------------ -------- -------------- ---------------------------------- --------
+       213 C##OPS_RO    ACTIVE   MacBook-Air-de SQLcl                              1072    
+                                 -Antonio.local                                            
+

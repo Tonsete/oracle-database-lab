@@ -1,0 +1,18 @@
+== 1. Procesos de background clave (compara el PID con SPID de 09-procesos.sql) ==
+643      72         db_pmon_FREE 
+693      85         db_dbw0_FREE 
+695      100        db_lgwr_FREE 
+697      84         db_ckpt_FREE 
+699      70         db_smon_FREE 
+707      69         db_reco_FREE 
+709      104        db_lreg_FREE 
+723      324        db_mmon_FREE 
+725      72         db_mmnl_FREE 
+== 2. Recuento por tipo ==
+   background (db_*_FREE / ora_*_FREE): 61
+   servidor dedicado (oracleFREE):       1
+   listener (tnslsnr):                   1
+== 3. Procesos servidor: LOCAL=NO llega por red (listener), LOCAL=YES es bequeath (docker exec ... / as sysdba) ==
+1080     124        oracleFREE (LOCAL=NO) 
+== 4. El proceso con SPID 695 ==
+695      100        db_lgwr_FREE 
