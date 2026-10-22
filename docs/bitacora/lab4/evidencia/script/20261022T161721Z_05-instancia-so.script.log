@@ -1,0 +1,61 @@
+== 1. Procesos de la instancia FREE (docker top = ps dentro del contenedor) ==
+2894                54321               71m                 {ora_pmon_free} db_pmon_FREE
+2898                54321               69m                 {ora_clmn_free} db_clmn_FREE
+2902                54321               69m                 {ora_psp0_free} db_psp0_FREE
+2906                54321               91m                 {ora_vktm_free} db_vktm_FREE
+2912                54321               72m                 {ora_gen0_free} db_gen0_FREE
+2916                54321               105m                {ora_mman_free} db_mman_FREE
+2922                54321               69m                 {ora_gen2_free} db_gen2_FREE
+2924                54321               69m                 {ora_diag_free} db_diag_FREE
+2926                54321               72m                 {ora_scmn_free} db_ofsd_FREE
+2930                54321               72m                 {ora_scmn_free} db_gwpd_FREE
+2932                54321               101m                {ora_dbrm_free} db_dbrm_FREE
+2934                54321               69m                 {ora_vkrm_free} db_vkrm_FREE
+2936                54321               86m                 {ora_pman_free} db_pman_FREE
+2939                54321               82m                 {ora_dia0_free} db_dia0_FREE
+2941                54321               81m                 {ora_dbw0_free} db_dbw0_FREE
+   ... total de procesos de background (db_*_FREE en 26ai; ora_*_FREE en versiones anteriores): 62
+== 2. Procesos servidor (uno por sesión dedicada) y listener ==
+2870                54321               /opt/oracle/product/26ai/dbhomeFree/bin/tnslsnr LISTENER -inherit
+3478                54321               {oracle_572_free} oracleFREE (LOCAL=NO)
+   (si no ves ningún oracleFREE es que no hay sesiones abiertas por red: abre SQLcl en otra terminal y repite)
+== 3. Memoria del contenedor (incluye la SGA) ==
+NAME          MEM USAGE / LIMIT     CPU %
+oralab-26ai   2.035GiB / 11.73GiB   3.09%
+== 4. La base de datos en disco: archivos del CDB y de FREEPDB1 ==
+drwxr-x--- 1 oracle oinstall  250 Oct 22 16:16 FREEPDB1
+-rw-r----- 1 oracle oinstall  18M Oct 22 16:17 control01.ctl
+-rw-r----- 1 oracle oinstall  18M Oct 22 16:17 control02.ctl
+drwxr-x--- 1 oracle oinstall   94 Sep 25 17:36 pdbseed
+-rw-r----- 1 oracle oinstall 201M Oct 22 16:17 redo01.log
+-rw-r----- 1 oracle oinstall 201M Oct 22 16:16 redo02.log
+-rw-r----- 1 oracle oinstall 201M Oct 22 16:16 redo03.log
+-rw-r----- 1 oracle oinstall 851M Oct 22 16:16 sysaux01.dbf
+-rw-r----- 1 oracle oinstall 1.1G Oct 22 16:16 system01.dbf
+-rw-r----- 1 oracle oinstall  21M Oct 22 16:16 temp01.dbf
+-rw-r----- 1 oracle oinstall  46M Oct 22 16:16 undotbs01.dbf
+-rw-r----- 1 oracle oinstall 7.1M Oct 22 16:16 users01.dbf
+-- FREEPDB1 --
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 academia01.dbf
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 clinica01.dbf
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 fintech01.dbf
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 logistica01.dbf
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 retail01.dbf
+-rw-r----- 1 oracle oinstall 581M Oct 22 16:17 sysaux01.dbf
+-rw-r----- 1 oracle oinstall 321M Oct 22 16:16 system01.dbf
+-rw-r----- 1 oracle oinstall  21M Oct 14 05:36 temp01.dbf
+-rw-r----- 1 oracle oinstall 101M Oct 22 16:16 undotbs01.dbf
+-rw-r----- 1 oracle oinstall  73M Oct 22 16:16 users01.dbf
+== 5. Listener: servicios registrados ==
+Uptime                    0 days 0 hr. 0 min. 28 sec
+Default Service           FREE
+Listening Endpoints Summary...
+Services Summary...
+Service "5621983b6dfb0909e0630b00580a528d" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREE" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREEXDB" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "freepdb1" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
