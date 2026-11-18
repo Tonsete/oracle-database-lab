@@ -9,7 +9,7 @@ source scripts/deployment/env/00-config.sh
 OWNER="${1:?Uso: grafico-indice.sh <ESQUEMA> <INDICE> [evidencia]}"; INDICE="${2:?Falta el nombre del índice}"
 LOG="${3:-/dev/null}"
 [ "$LOG" = /dev/null ] || mkdir -p "$(dirname "$LOG")"
-OWNER="${OWNER^^}"; INDICE="${INDICE^^}"
+OWNER=$(printf "%s" "$OWNER" | tr "[:lower:]" "[:upper:]"); INDICE=$(printf "%s" "$INDICE" | tr "[:lower:]" "[:upper:]")
 [[ "$OWNER" =~ ^[A-Z][A-Z0-9_$#]*$ && "$INDICE" =~ ^[A-Z][A-Z0-9_$#]*$ ]] || { echo "Nombre no válido" >&2; exit 2; }
 # Cada línea "leaf: 0x... bloque (k: row:N.R avs:A)" del treedump es una hoja: N entradas, R vivas (N-R borradas), A bytes libres
 HOJAS="(SELECT ROW_NUMBER() OVER (ORDER BY line_number) AS pos,
