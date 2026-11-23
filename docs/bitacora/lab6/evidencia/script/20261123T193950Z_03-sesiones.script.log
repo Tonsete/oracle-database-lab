@@ -1,0 +1,8 @@
+== EVIDENCIA alumno=E027 hora=2026-11-23T19:39:50Z origen=03-sesiones
+== EVIDENCIA contenedor=24355ec38065 dbid=1510161217 arranque=2026-11-23T19:35:56 scn=6438922
+== 1. ¿Qué servicios anuncia el listener? (deben aparecer freepdb1 y academia_app, READY) ==
+Service "academia_app" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "freepdb1" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+== 2. La aplicación entra por el servicio academia_app y deja la fila 101 modificada SIN confirmar ==
