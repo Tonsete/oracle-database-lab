@@ -17,8 +17,9 @@ docker exec "$CONT_NAME" lsnrctl status | awk '/^Service "(academia_app|freepdb1
 
 echo "== 2. La aplicación entra por el servicio academia_app y deja la fila 101 modificada SIN confirmar =="
 # La sesión de la aplicación corre en segundo plano: entra por la red (listener), como una aplicación real
-{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat <<'SQL'; } \
-  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
+# macOS (bash 3.2): no admite un heredoc dentro de { ...; } | ... &. El SQL va antes a un archivo temporal
+APP_SQL=$(mktemp)
+cat > "$APP_SQL" <<'SQL'
 SET FEEDBACK ON LINESIZE 150
 COLUMN contenedor FORMAT A10
 COLUMN servicio FORMAT A13
@@ -37,6 +38,8 @@ EXEC DBMS_SESSION.SLEEP(40)
 ROLLBACK;
 EXIT
 SQL
+{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat "$APP_SQL"; } \
+  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
 APP_PID=$!
 sleep 8
 
@@ -89,7 +92,7 @@ SQL
 wait "$APP_PID" 2>/dev/null || true
 echo "-- Lo que vio la aplicación, de principio a fin --"
 cat "$APP_LOG"
-rm -f "$APP_LOG"
+rm -f "$APP_LOG" "$APP_SQL"
 echo "-- Lo que quedó en el alert log: quién mató a quién --"
 docker exec "$CONT_NAME" bash -c 'grep -a -A6 "KILL SESSION for sid" /opt/oracle/diag/rdbms/free/FREE/trace/alert_FREE.log | tail -7'
 

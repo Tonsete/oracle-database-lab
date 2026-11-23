@@ -35,3 +35,16 @@ sed -i '' 's#^source scripts/deployment/env/00-config.sh$#&; command -v sha256su
 - **Propósito (para qué lo necesitaba):** No me daba tiempo a hacer todo el laboratorio en el tiempo acordado ya que tengo que hacer varios trabajos de otras asignaturas.
 - **Qué hace (con mis palabras; línea a línea si es SQL corto):** Añade a la configuración la ruta donde guardaré las evidencias del Lab 6 y configura SQLPATH para que SQLcl encuentre login.sql en la raíz del repositorio. Adapta backup-estado.sh para que genere la cabecera de evidencia y use UTF-8 al ejecutar SQL*Plus. En 06-cascada.sh, cambia la generación de contraseñas temporales para que funcione en macOS, que no incluye date +%s%N ni sha256sum. En 09-verificacion-final.sh, añade shasum -a 256 como alternativa cuando no está disponible sha256sum. También se da permiso de ejecución a los scripts y se crean las carpetas para guardar las evidencias.
 - **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 
+
+## Entrada 3
+- **Herramienta:** Claude (Anthropic)
+- **Prompt (literal, copiado tal cual):**
+```text
+(pegué la salida de la terminal, que terminaba en:)
+scripts/lab6/03-sesiones.sh: line 40: syntax error near unexpected token `APP_PID=$!'
+```
+- **Código recibido (el fragmento, o la ruta del archivo donde está):** parche aplicado con git apply a scripts/lab6/03-sesiones.sh (ver el commit «fix(ops): run 03-sesiones.sh on macOS bash 3.2»)
+- **Dónde lo usé (parte, script o pregunta):** Parte D.3, scripts/lab6/03-sesiones.sh
+- **Propósito (para qué lo necesitaba):** 
+- **Qué hace (con mis palabras; línea a línea si es SQL corto):** 
+- **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 
