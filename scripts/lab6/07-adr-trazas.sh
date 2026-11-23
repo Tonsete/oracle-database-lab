@@ -31,8 +31,9 @@ else
 fi
 echo "== 5. Trazar la sesión de OTRO usuario sin pedirle nada ni reiniciar (DBMS_MONITOR) =="
 APP_LOG=$(mktemp)
-{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat <<'SQL'; } \
-  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
+# macOS (bash 3.2): no admite un heredoc dentro de { ...; } | ... &. El SQL va antes a un archivo temporal
+APP_SQL=$(mktemp)
+cat > "$APP_SQL" <<'SQL'
 ALTER SESSION SET tracefile_identifier = 'lab6_app';
 EXEC DBMS_APPLICATION_INFO.SET_MODULE('ficha-alumno', 'consulta-activos')
 EXEC DBMS_SESSION.SLEEP(8)
@@ -40,6 +41,8 @@ SELECT COUNT(*) AS activos FROM admin_academia.aca_estudiantes WHERE estado = 'A
 EXEC DBMS_SESSION.SLEEP(3)
 EXIT
 SQL
+{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat "$APP_SQL"; } \
+  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
 APP_PID=$!
 sleep 4
 SID_SER=$(printf "SET HEADING OFF FEEDBACK OFF PAGESIZE 0\nSELECT sid || ',' || serial# FROM v\$session WHERE username = 'APP_ACADEMIA' AND module = 'ficha-alumno' AND ROWNUM = 1;\nEXIT\n" | sql | xargs)
@@ -48,7 +51,7 @@ TRC=$(printf "SET HEADING OFF FEEDBACK OFF PAGESIZE 0 LINESIZE 300\nSELECT p.tra
 echo "  Sesión $SID_SER · su traza irá a $TRC"
 printf "EXEC DBMS_MONITOR.SESSION_TRACE_ENABLE(session_id => %s, serial_num => %s, waits => TRUE, binds => FALSE)\nEXIT\n" "${SID_SER%%,*}" "${SID_SER##*,}" | sql
 wait "$APP_PID" || true
-cat "$APP_LOG"; rm -f "$APP_LOG"
+cat "$APP_LOG"; rm -f "$APP_LOG" "$APP_SQL"
 echo "-- Extracto de la traza en bruto (una línea de cada tipo) --"
 docker exec "$CONT_NAME" bash -c "grep -a -m1 '^PARSING IN CURSOR' '$TRC'; grep -a -m1 '^EXEC #' '$TRC'; grep -a -m1 '^FETCH #.*dep=0' '$TRC'; grep -a -m1 \"^WAIT #.*nam='PL/SQL lock timer'\" '$TRC'" | cut -c1-140 || true
 echo "-- tkprof la convierte en un informe legible (solo la consulta de la aplicación) --"

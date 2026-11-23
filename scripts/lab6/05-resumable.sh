@@ -21,8 +21,9 @@ ALTER USER carga_hist QUOTA 2M ON tbs_academia_hist;
 SQL
 
 echo "== 1. La aplicación lanza la carga con RESUMABLE (espera hasta 180 s si le falta espacio) =="
-{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat <<'SQL'; } \
-  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
+# macOS (bash 3.2): no admite un heredoc dentro de { ...; } | ... &. El SQL va antes a un archivo temporal
+APP_SQL=$(mktemp)
+cat > "$APP_SQL" <<'SQL'
 SET FEEDBACK ON
 ALTER SESSION ENABLE RESUMABLE TIMEOUT 180 NAME 'carga-historico';
 SELECT TO_CHAR(SYSTIMESTAMP, 'HH24:MI:SS') AS inicio FROM dual;
@@ -31,6 +32,8 @@ COMMIT;
 SELECT TO_CHAR(SYSTIMESTAMP, 'HH24:MI:SS') AS fin FROM dual;
 EXIT
 SQL
+{ printf 'CONNECT app_academia/"%s"@//localhost:1521/academia_app\n' "$APP_ACADEMIA_PWD"; cat "$APP_SQL"; } \
+  | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$CONT_NAME" sqlplus -s /nolog > "$APP_LOG" 2>&1 &
 APP_PID=$!
 sleep 12
 
@@ -51,7 +54,7 @@ echo "== 3. Menor cambio útil: ampliar la CUOTA del dueño (no el tablespace, q
 printf "ALTER SESSION SET CONTAINER = FREEPDB1;\nALTER USER carga_hist QUOTA 30M ON tbs_academia_hist;\nEXIT\n" | sql
 wait "$APP_PID" || true
 echo "-- Lo que vio la aplicación: la carga terminó, con una pausa en medio --"
-cat "$APP_LOG"; rm -f "$APP_LOG"
+cat "$APP_LOG"; rm -f "$APP_LOG" "$APP_SQL"
 docker exec "$CONT_NAME" bash -c 'grep -a -i "resumable session" /opt/oracle/diag/rdbms/free/FREE/trace/alert_FREE.log | tail -2'
 
 echo "== 4. Validación: filas cargadas y cuota consumida =="

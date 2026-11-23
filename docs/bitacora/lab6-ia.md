@@ -48,3 +48,15 @@ scripts/lab6/03-sesiones.sh: line 40: syntax error near unexpected token `APP_PI
 - **Propósito (para qué lo necesitaba):** 
 - **Qué hace (con mis palabras; línea a línea si es SQL corto):** 
 - **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 
+
+## Entrada 4
+- **Herramienta:** Claude (Anthropic)
+- **Prompt (literal, copiado tal cual):**
+```text
+(no hubo pregunta mía: al revisar el kit tras el fallo de 03-sesiones.sh, la IA detectó el mismo problema en estos dos scripts y me propuso el arreglo antes de ejecutarlos)
+```
+- **Código recibido (el fragmento, o la ruta del archivo donde está):** parche aplicado con git apply a scripts/lab6/05-resumable.sh y scripts/lab6/07-adr-trazas.sh (ver el commit «fix(ops): apply the bash 3.2 fix to 05-resumable.sh and 07-adr-trazas.sh»)
+- **Dónde lo usé (parte, script o pregunta):** Partes F.2 y H.4
+- **Propósito (para qué lo necesitaba):** 
+- **Qué hace (con mis palabras; línea a línea si es SQL corto):** 
+- **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 
