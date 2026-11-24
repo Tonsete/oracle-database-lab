@@ -60,3 +60,18 @@ scripts/lab6/03-sesiones.sh: line 40: syntax error near unexpected token `APP_PI
 - **Propósito (para qué lo necesitaba):** 
 - **Qué hace (con mis palabras; línea a línea si es SQL corto):** 
 - **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 
+
+## Entrada 5
+- **Herramienta:** Claude (Anthropic)
+- **Prompt (literal, copiado tal cual):**
+```text
+(no hubo pregunta mía: al revisar los scripts de la Parte I antes de ejecutarlos, la IA vio que 08-guardia.sh usa setsid, que no existe en macOS, y me propuso el arreglo)
+```
+- **Código recibido (el fragmento, o la ruta del archivo donde está):**
+```bash
+sed -i '' 's#^  setsid nohup bash -c#  $(command -v setsid || true) nohup bash -c#' scripts/lab6/08-guardia.sh
+```
+- **Dónde lo usé (parte, script o pregunta):** Parte I, scripts/lab6/08-guardia.sh
+- **Propósito (para qué lo necesitaba):** 
+- **Qué hace (con mis palabras; línea a línea si es SQL corto):** 
+- **Evidencia de ejecución (archivo de docs/bitacora/lab6/evidencia con mi cabecera):** 

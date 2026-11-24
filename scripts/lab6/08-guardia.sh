@@ -18,7 +18,7 @@ ticket() {   # recuadro de 78 columnas; ${#l} cuenta caracteres (no bytes), así
 
 # Lanza una sesión de base de datos que sigue viva cuando este script termina (como la de una aplicación real)
 sesion_fondo() {   # $1 = usuario, $2 = contraseña, $3 = servicio, $4 = SQL
-  setsid nohup bash -c 'printf "%s\n" "$1" | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$2" sqlplus -s /nolog > /dev/null 2>&1' _ \
+  $(command -v setsid || true) nohup bash -c 'printf "%s\n" "$1" | docker exec -i -e NLS_LANG=AMERICAN_AMERICA.AL32UTF8 "$2" sqlplus -s /nolog > /dev/null 2>&1' _ \
     "$(printf 'CONNECT %s/"%s"@//localhost:1521/%s\n%s\nEXIT' "$1" "$2" "$3" "$4")" "$CONT_NAME" > /dev/null 2>&1 &
 }
 
